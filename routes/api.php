@@ -17,7 +17,7 @@ $api->version('v1', ['namespace' => 'App\Api\Controllers'], function($api) {
 	$api->post('login', 'AuthController@login');
 	$api->post('logout', 'AuthController@logout');
 	$api->post('refresh', 'AuthController@refresh');
-	$api->post('me', 'AuthController@me');
+	$api->get('me', 'AuthController@me');
 
 	$api->group(['middleware' => 'api.auth'], function($api) {
 		$api->get('/lessons', 'LessonsController@index');
